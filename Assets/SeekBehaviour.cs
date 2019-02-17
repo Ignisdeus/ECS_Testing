@@ -13,6 +13,7 @@ public class SeekBehaviour : SteeringBehaviour
         Vector3 desired = x.target - x.transform.position;
         desired.Normalize();
         desired *= x.maxSpeed;
+
         return desired - x.velocity;
 
         //return Vector3.zero; 

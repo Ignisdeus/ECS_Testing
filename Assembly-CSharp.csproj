@@ -63,6 +63,9 @@
     <Compile Include="Assets\ArriveBehaviour.cs" />
     <Compile Include="Assets\Boid_ECS.cs" />
     <Compile Include="Assets\Boid_GameMaster.cs" />
+    <Compile Include="Assets\Path_Data.cs" />
+    <Compile Include="Assets\Path_ECS.cs" />
+    <Compile Include="Assets\PathFollow.cs" />
     <Compile Include="Assets\Scripts\Boid_Testing\Boid_Data.cs" />
     <Compile Include="Assets\Scripts\Test_One\PlayerControle_Behaviour.cs" />
     <Compile Include="Assets\Scripts\Test_One\PlayerControle_Data.cs" />

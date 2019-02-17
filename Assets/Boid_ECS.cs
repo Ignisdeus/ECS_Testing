@@ -58,7 +58,7 @@ public class Boid_ECS : ComponentSystem{
             //if (b.isActiveAndEnabled){
 
                 force += b.Calculate(x) * b.weight;
-
+                //Debug.Log(force);
                 float f = force.magnitude;
                 if (f >= x.maxForce)
                 {
@@ -67,11 +67,11 @@ public class Boid_ECS : ComponentSystem{
                 }
             //}
         }
-
+       
         return force;
     }
     protected override void OnUpdate(){
-        float vert = Input.GetAxisRaw("Vertical");
+        //float vert = Input.GetAxisRaw("Vertical");
 
         foreach (var b in GetEntities<components>()){
 

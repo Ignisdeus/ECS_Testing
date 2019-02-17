@@ -15,4 +15,16 @@ public class Boid_Data : MonoBehaviour
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f;
     public List<SteeringBehaviour> movement = new List<SteeringBehaviour>();
+
+    private void Awake()
+    {
+        SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
+
+        foreach (SteeringBehaviour x in behaviours){
+            if (x.isActiveAndEnabled){
+                movement.Add(x);
+            }
+        
+        }
+    }
 }
