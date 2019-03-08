@@ -16,7 +16,7 @@ public class Boid_Data : MonoBehaviour
     public float maxForce = 10.0f;
     public List<SteeringBehaviour> movement = new List<SteeringBehaviour>();
 
-    private void Awake()
+    private void Start()
     {
         SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
 

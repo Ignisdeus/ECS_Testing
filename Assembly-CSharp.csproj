@@ -60,19 +60,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ArriveBehaviour.cs" />
-    <Compile Include="Assets\Boid_ECS.cs" />
-    <Compile Include="Assets\Boid_GameMaster.cs" />
-    <Compile Include="Assets\Path_Data.cs" />
-    <Compile Include="Assets\Path_ECS.cs" />
-    <Compile Include="Assets\PathFollow.cs" />
     <Compile Include="Assets\Scripts\Boid_Testing\Boid_Data.cs" />
+    <Compile Include="Assets\Scripts\Boid_Testing\Boid_GameMaster.cs" />
+    <Compile Include="Assets\Scripts\Data\Path_Data.cs" />
+    <Compile Include="Assets\Scripts\ECS\Boid_ECS.cs" />
+    <Compile Include="Assets\Scripts\ECS\Path_ECS.cs" />
+    <Compile Include="Assets\Scripts\Steering Behaviours\ArriveBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Steering Behaviours\PathFollow.cs" />
+    <Compile Include="Assets\Scripts\Steering Behaviours\SeekBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Steering Behaviours\SteeringBehaviour.cs" />
     <Compile Include="Assets\Scripts\Test_One\PlayerControle_Behaviour.cs" />
     <Compile Include="Assets\Scripts\Test_One\PlayerControle_Data.cs" />
     <Compile Include="Assets\Scripts\Test_One\Rotation.cs" />
     <Compile Include="Assets\Scripts\Test_One\Rotation_Entity.cs" />
-    <Compile Include="Assets\SeekBehaviour.cs" />
-    <Compile Include="Assets\SteeringBehaviour.cs" />
     <Reference Include="Unity.Entities.Properties">
       <HintPath>E:/Unity Projects/ECS_Testing/ECS_Testing/Library/ScriptAssemblies/Unity.Entities.Properties.dll</HintPath>
     </Reference>
