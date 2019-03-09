@@ -8,6 +8,7 @@ This document will outline the plan for this project, with scene progressions an
 -	Big carrier ship (Wonder) fly’s through space with a wonder behaviour. 
 -	Camera (Path Follow) circles the carer ship.
 -	Carrier ship (Seek) jumps to FTL.
+
 **Scene 2-3:**
 
   ![Scene_Two](https://github.com/Ignisdeus/ECS_Testing/blob/master/Images/Scene_Two.jpg)
