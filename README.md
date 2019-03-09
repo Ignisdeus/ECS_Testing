@@ -1,7 +1,7 @@
 # ECS_Testing
 This document will outline the plan for this project, with scene progressions and behaviours found within each scene. 
 Scene 1: 
-![Scene_One](/Images/Scene_One.jpeg)
+![Scene_One](ECS_Testing/Images/Scene_One.jpeg)
  
 -	Big carrier ship (Wonder) fly’s through space with a wonder behaviour. 
 -	Camera (Path Follow) circles the carer ship.
