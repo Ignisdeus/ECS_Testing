@@ -15,8 +15,8 @@ public class PathFollow : SteeringBehaviour
     {
         if (isActiveAndEnabled && Application.isPlaying)
         {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(transform.position, path.waypoints[current]);
+            //Gizmos.color = Color.blue;
+            //Gizmos.DrawLine(transform.position, path.waypoints[current]);
         }
     }
     private void Start()
