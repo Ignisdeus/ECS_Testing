@@ -60,7 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BirdMother_Ship_ECS.cs" />
+    <Compile Include="Assets\Camera_Change_Event.cs" />
     <Compile Include="Assets\Camera_LookAt.cs" />
+    <Compile Include="Assets\DestoryTimer.cs" />
+    <Compile Include="Assets\FTL_Spawner.cs" />
+    <Compile Include="Assets\MotherShip_Data.cs" />
     <Compile Include="Assets\Scripts\Boid_Testing\Boid_Data.cs" />
     <Compile Include="Assets\Scripts\Boid_Testing\Boid_GameMaster.cs" />
     <Compile Include="Assets\Scripts\Data\Path_Data.cs" />

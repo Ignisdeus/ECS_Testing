@@ -9,7 +9,7 @@ public class PathFollow : SteeringBehaviour
     public Path_Data path;
 
 
-    int current = 0; 
+    public int current = 0; 
 
     public void OnDrawGizmos()
     {
@@ -19,11 +19,14 @@ public class PathFollow : SteeringBehaviour
             //Gizmos.DrawLine(transform.position, path.waypoints[current]);
         }
     }
+    public bool pathNotAssigned; 
     private void Start()
     {
-       GameObject[] target = GameObject.FindGameObjectsWithTag("Path");
-        int rnd = Random.Range(0, target.Length);
-        path = target[rnd].GetComponent<Path_Data>();
+        if(pathNotAssigned){
+            GameObject[] target = GameObject.FindGameObjectsWithTag("Path");
+            int rnd = Random.Range(0, target.Length);
+            path = target[rnd].GetComponent<Path_Data>();
+        }
     }
 
     public override Vector3 Calculate(Boid_Data x)
