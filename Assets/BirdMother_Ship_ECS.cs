@@ -29,7 +29,7 @@ public class BirdMother_Ship_ECS : ComponentSystem
                 b.boid.GetComponent<ArriveBehaviour>().weight = 1f;
                 float dist = Vector3.Distance(Vector3.zero, b.pos.transform.position);
 
-                if(dist < 5f){
+                if(dist < 50f){
                     int pathNo = b.boid.GetComponent<PathFollow>().path.waypoints.Count;
                     b.boid.GetComponent<PathFollow>().current = Random.Range(0, pathNo);
                     b.ship.combat = true;
