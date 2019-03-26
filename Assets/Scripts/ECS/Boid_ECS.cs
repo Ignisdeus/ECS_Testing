@@ -89,7 +89,19 @@ public class Boid_ECS : ComponentSystem{
                 b.boid.transform.position += b.boid.velocity * Time.deltaTime;
                 b.boid.velocity *= (1.0f - (b.boid.damping * Time.deltaTime));
 
-            } 
-        }
+            }
+
+            b.boid.currentTime += Time.deltaTime;
+
+            if (b.boid.currentTime > b.boid.rayCastTimer)
+            {
+                b.boid.currentTime = 0f;
+
+                // raycast to see if target is there :) 
+                Physics.Raycast(b.boid.transform.position, b.boid.transform.forward * b.boid.rayLenght, out b.boid.hit );
+
+            }
+
+            }
     }
 }
