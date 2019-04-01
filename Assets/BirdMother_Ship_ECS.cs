@@ -20,7 +20,8 @@ public class BirdMother_Ship_ECS : ComponentSystem
                 //b.boid.GetComponent<PathFollow>().enabled=true;
                 b.boid.GetComponent<ArriveBehaviour>().weight = 0f;
                 b.boid.GetComponent<PathFollow>().weight = 1f;
-                if(spawnedShips < b.ship.babyShips){
+                if(spawnedShips < 1){
+                    Debug.Log("spawning");
                     SpawnCombatBoid(b.ship);
                 }
  
@@ -41,9 +42,9 @@ public class BirdMother_Ship_ECS : ComponentSystem
 
     void SpawnCombatBoid(MotherShip_Data x){
 
-        Vector3 spawnPoint = Random.insideUnitSphere * (5) + x.transform.position;
-        x.Spawn(spawnPoint);
-        spawnedShips++; 
+
+        x.StartCoroutine(x.Spawn());
+        
 
 
     }

@@ -9,10 +9,21 @@ public class MotherShip_Data : MonoBehaviour
     public Transform[] spawners;
     public GameObject miniShips;
     public int babyShips = 100;
-    
 
-    public void Spawn(Vector3 x){
-        Instantiate(miniShips, x, Quaternion.identity);
+    int count = 0 ; 
+    public IEnumerator Spawn(){
+
+        if(babyShips > count ){
+
+
+            count++; 
+            Instantiate(miniShips, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.1f);
+            Spawn(); 
+        }else{
+            yield return new WaitForSeconds(0.1f);
+            
+        }
 
     }
 

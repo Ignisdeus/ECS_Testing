@@ -97,9 +97,6 @@ public class Boid_ECS : ComponentSystem{
             {
                 b.boid.currentTime = 0f;
 
-                // raycast to see if target is there :) 
-                Physics.Raycast(b.boid.transform.position, b.boid.transform.forward * b.boid.rayLenght, out b.boid.hit );
-
             }
 
             }
