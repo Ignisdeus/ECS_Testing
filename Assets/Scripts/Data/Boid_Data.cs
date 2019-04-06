@@ -5,7 +5,15 @@ using UnityEngine;
 public class Boid_Data : MonoBehaviour
 {
     public string enemy;
+    public enum Behaviour{
+        explore,
+        hunt, 
+        engage,
+        run
 
+    }
+
+    public Behaviour action; 
     [HideInInspector]
     public float rayCastTimer, currentTime; 
     public Vector3 force = Vector3.zero, acceleration = Vector3.zero,  velocity = Vector3.zero, target;
@@ -23,6 +31,7 @@ public class Boid_Data : MonoBehaviour
 
     private void Start()
     {
+        action = Behaviour.explore; 
         rayCastTimer = Random.Range(0,5f);
         SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
 

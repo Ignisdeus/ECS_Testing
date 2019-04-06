@@ -7,6 +7,7 @@ TagManager:
   - leader
   - Path
   - BirdShip
+  - Drone
   layers:
   - Default
   - TransparentFX

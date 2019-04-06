@@ -9,22 +9,9 @@ public class Boid_ECS : ComponentSystem{
         public Boid_Data boid;
     }
 
-    protected override void OnStartRunning(){
-        //foreach (var b in GetEntities<components>()){
+    protected override void OnStartRunning(){}
 
-
-            //SteeringBehaviour[] behaviours = b.boid.GetComponents<SteeringBehaviour>();
-
-            //foreach (SteeringBehaviour x in behaviours)
-            //{
-                //if (x.isActiveAndEnabled)
-                //{
-                    //b.boid.movement.Add(x);
-                //}
-            //}
-
-        //}
-    }
+    /*
     public Vector3 SeekForce(Boid_Data x)
     {
         Vector3 desired = x.target - x.transform.position;
@@ -47,7 +34,7 @@ public class Boid_ECS : ComponentSystem{
         Vector3 desired = clamped * (toTarget / distance);
 
         return desired - x.velocity;
-    }
+    }*/
     Vector3 Calculate(Boid_Data x)
     {
 
@@ -71,34 +58,49 @@ public class Boid_ECS : ComponentSystem{
         return force;
     }
     protected override void OnUpdate(){
-        //float vert = Input.GetAxisRaw("Vertical");
+       
 
         foreach (var b in GetEntities<components>()){
 
 
-            b.boid.force = Calculate(b.boid);
-            b.boid.acceleration = b.boid.force / b.boid.mass;
-            b.boid.velocity += b.boid.acceleration * Time.deltaTime;
-            b.boid.transform.position += b.boid.velocity * Time.deltaTime;
             
-            if(b.boid.velocity.magnitude > float.Epsilon){
-
-                Vector3 tempUp = Vector3.Lerp(b.boid.transform.up, Vector3.up + (b.boid.acceleration * b.boid.banking), Time.deltaTime * 3.0f);
-                b.boid.transform.LookAt(b.boid.transform.position + b.boid.velocity, tempUp);
-
-                b.boid.transform.position += b.boid.velocity * Time.deltaTime;
-                b.boid.velocity *= (1.0f - (b.boid.damping * Time.deltaTime));
-
+            Boid_Data x = b.boid;
+            //tryed making a state machine setup but slowed down performace to 6 fps unknowen reasion
+            if(x.action == Boid_Data.Behaviour.explore){
+                Explore(x);
+            }else if(x.action == Boid_Data.Behaviour.engage) {
+                Explore(x);
+            }else{
+                Explore(x);
             }
 
-            b.boid.currentTime += Time.deltaTime;
-
-            if (b.boid.currentTime > b.boid.rayCastTimer)
-            {
-                b.boid.currentTime = 0f;
-
-            }
-
-            }
+        }
     }
+
+    void Explore(Boid_Data x){
+        x.force = Calculate(x);
+        x.acceleration = x.force / x.mass;
+        x.velocity += x.acceleration * Time.deltaTime;
+        x.transform.position += x.velocity * Time.deltaTime;
+
+        if (x.velocity.magnitude > float.Epsilon) {
+
+            Vector3 tempUp = Vector3.Lerp(x.transform.up, Vector3.up + (x.acceleration * x.banking), Time.deltaTime * 3.0f);
+            x.transform.LookAt(x.transform.position + x.velocity, tempUp);
+
+            x.transform.position += x.velocity * Time.deltaTime;
+            x.velocity *= (1.0f - (x.damping * Time.deltaTime));
+
+        }
+
+        x.currentTime += Time.deltaTime;
+
+        if (x.currentTime > x.rayCastTimer) {
+            x.currentTime = 0f;
+
+        }
+    }
+
+
 }
+

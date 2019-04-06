@@ -11,7 +11,7 @@ public class BirdMother_Ship_ECS : ComponentSystem
         public Boid_Data boid;
         public MotherShip_Data ship; 
     }
-    int spawnedShips = 0; 
+    
     protected override void OnUpdate(){
 
         foreach (var b in GetEntities<components>()){
@@ -20,9 +20,10 @@ public class BirdMother_Ship_ECS : ComponentSystem
                 //b.boid.GetComponent<PathFollow>().enabled=true;
                 b.boid.GetComponent<ArriveBehaviour>().weight = 0f;
                 b.boid.GetComponent<PathFollow>().weight = 1f;
-                if(spawnedShips < 1){
-                    Debug.Log("spawning");
+                if(b.ship.canSpawn){
+                    b.ship.canSpawn = false; 
                     SpawnCombatBoid(b.ship);
+                    
                 }
  
             } else{
@@ -43,7 +44,8 @@ public class BirdMother_Ship_ECS : ComponentSystem
     void SpawnCombatBoid(MotherShip_Data x){
 
 
-        x.StartCoroutine(x.Spawn());
+        
+                x.StartCoroutine(x.Spawn());
         
 
 

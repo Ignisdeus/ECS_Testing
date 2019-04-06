@@ -20,7 +20,8 @@ public class CustomWonder : SteeringBehaviour
         float dist = Vector3.Distance(x.transform.position, target);
         
         if(dist < 20){
-            target = Random.onUnitSphere * (radus);
+            
+            target = Random.insideUnitSphere * (radus);
             x.target = target;
         }
        return x.GetComponent<SeekBehaviour>().Calculate(x);

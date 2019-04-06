@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4426460372037649896}
   - component: {fileID: 4426460372037649897}
   - component: {fileID: 4426460372037649895}
+  - component: {fileID: 6063997310525510647}
   m_Layer: 0
   m_Name: DisplayBoid
   m_TagString: Untagged
@@ -109,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261a13412d55608479a56f5b25a347c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: 
+  action: 0
+  rayCastTimer: 0
+  currentTime: 0
   force: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
@@ -147,6 +152,8 @@ MonoBehaviour:
   force: {x: 0, y: 0, z: 0}
   distance: 2
   path: {fileID: 0}
+  current: 0
+  pathNotAssigned: 0
 --- !u!114 &4426460372037649897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +183,19 @@ MonoBehaviour:
   weight: 0
   force: {x: 0, y: 0, z: 0}
   slowingDistance: 50
+--- !u!114 &6063997310525510647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426460372037649808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2cbdfa4e78cff4da78c4d4da3e99d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &1476181657448683866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,6 +272,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4426460372037649899}
     m_Modifications:
+    - target: {fileID: 1610991785650228, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
+      propertyPath: m_Name
+      value: 'Attack_Bird '
+      objectReference: {fileID: 0}
     - target: {fileID: 4139154951455856, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -299,10 +323,6 @@ PrefabInstance:
     - target: {fileID: 4139154951455856, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
       propertyPath: m_LocalScale.x
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1610991785650228, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
-      propertyPath: m_Name
-      value: 'Attack_Bird '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
