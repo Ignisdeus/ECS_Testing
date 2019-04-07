@@ -94,7 +94,7 @@ public class Drone_Data : MonoBehaviour
         for(int i =0; i < lines.Length; i ++){
             lines[i].enabled = true;
             lines[i].SetPosition(0, blasters[i].transform.position);
-            lines[i].SetPosition(1, blasters[0].TransformDirection(Vector3.forward) * rayLenght);
+            lines[i].SetPosition(1, blasters[i].transform.position * rayLenght);
         }
         yield return new WaitForSeconds(timeBetweenShots);
         for (int i = 0; i < lines.Length; i++) {

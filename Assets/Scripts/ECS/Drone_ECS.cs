@@ -23,16 +23,7 @@ public class Drone_ECS : ComponentSystem
                 x.StartCoroutine(x.GetComponent<Drone_Data>().RayCheck());
 
             } 
-
-
-
-
-
-
         } 
-
-
     }
-    
 
 }

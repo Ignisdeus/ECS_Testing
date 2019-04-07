@@ -8,6 +8,8 @@ TagManager:
   - Path
   - BirdShip
   - Drone
+  - MotherShipB
+  - MotherShipR
   layers:
   - Default
   - TransparentFX

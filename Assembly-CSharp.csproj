@@ -60,24 +60,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Camera_Change_Event.cs" />
-    <Compile Include="Assets\Camera_LookAt.cs" />
-    <Compile Include="Assets\DestoryTimer.cs" />
-    <Compile Include="Assets\Engine_Visuals.cs" />
-    <Compile Include="Assets\FTL_Spawner.cs" />
-    <Compile Include="Assets\GameMaster.cs" />
-    <Compile Include="Assets\Health.cs" />
-    <Compile Include="Assets\RandomSpin.cs" />
     <Compile Include="Assets\Scripts\Boid_Testing\Boid_GameMaster.cs" />
+    <Compile Include="Assets\Scripts\Camera_Change_Event.cs" />
+    <Compile Include="Assets\Scripts\Camera_LookAt.cs" />
     <Compile Include="Assets\Scripts\Data\Boid_Data.cs" />
     <Compile Include="Assets\Scripts\Data\Drone_Data.cs" />
     <Compile Include="Assets\Scripts\Data\MotherShip_Data.cs" />
     <Compile Include="Assets\Scripts\Data\Path_Data.cs" />
     <Compile Include="Assets\Scripts\Data\PlayerControle_Data.cs" />
+    <Compile Include="Assets\Scripts\DestoryTimer.cs" />
     <Compile Include="Assets\Scripts\ECS\BirdMother_Ship_ECS.cs" />
     <Compile Include="Assets\Scripts\ECS\Boid_ECS.cs" />
     <Compile Include="Assets\Scripts\ECS\Drone_ECS.cs" />
     <Compile Include="Assets\Scripts\ECS\Path_ECS.cs" />
+    <Compile Include="Assets\Scripts\Engine_Visuals.cs" />
+    <Compile Include="Assets\Scripts\FPSControler.cs" />
+    <Compile Include="Assets\Scripts\FTL_Spawner.cs" />
+    <Compile Include="Assets\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\MenuMaster.cs" />
+    <Compile Include="Assets\Scripts\RandomSpin.cs" />
     <Compile Include="Assets\Scripts\Steering Behaviours\ArriveBehaviour.cs" />
     <Compile Include="Assets\Scripts\Steering Behaviours\CustomWonder.cs" />
     <Compile Include="Assets\Scripts\Steering Behaviours\PathFollow.cs" />
