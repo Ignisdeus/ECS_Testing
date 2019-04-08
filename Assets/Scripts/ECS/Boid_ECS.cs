@@ -11,30 +11,6 @@ public class Boid_ECS : ComponentSystem{
 
     protected override void OnStartRunning(){}
 
-    /*
-    public Vector3 SeekForce(Boid_Data x)
-    {
-        Vector3 desired = x.target - x.transform.position;
-        desired.Normalize();
-        desired *= x.maxSpeed;
-        return desired - x.velocity;
-    }
-    public Vector3 ArriveForce(Boid_Data x, float slowingDistance = 15.0f)
-    {
-        Vector3 toTarget = x.target - x.transform.position;
-
-        float distance = toTarget.magnitude;
-        if (distance < 0.1f)
-        {
-            return Vector3.zero;
-        }
-        float ramped = x.maxSpeed * (distance / slowingDistance);
-
-        float clamped = Mathf.Min(ramped, x.maxSpeed);
-        Vector3 desired = clamped * (toTarget / distance);
-
-        return desired - x.velocity;
-    }*/
     Vector3 Calculate(Boid_Data x)
     {
 
@@ -70,14 +46,43 @@ public class Boid_ECS : ComponentSystem{
                 Explore(x);
             }else if(x.action == Boid_Data.Behaviour.engage) {
                 Explore(x);
-            }else{
+            }else if(x.action == Boid_Data.Behaviour.formation){
+                x.GetComponent<Drone_Data>().enemyTag = ""; 
+                FormUp(x);
+
+                              
+            }else if(x.action == Boid_Data.Behaviour.InFormation) {
+                TenHuh(x);
+                
+            }
+            else{
                 Explore(x);
             }
 
         }
     }
+    void FormUp(Boid_Data x){
+        x.GetComponent<Drone_Data>().enabled = false;
+        x.GetComponent<CustomWonder>().weight = 0f; 
+        x.GetComponent<ArriveBehaviour>().weight =1f;
+        x.GetComponent<SeekBehaviour>().weight =0f;
+        Explore(x);
+        float dist = Vector3.Distance(x.transform.position, x.target); 
+        if(dist < 2f){
+            x.action = Boid_Data.Behaviour.InFormation;
+            BeginTheBattle();
+        }
+        
+    } 
+
+    
+    void TenHuh(Boid_Data x){
+            x.velocity = Vector3.zero; 
+            x.transform.LookAt(x.LookAtPos);
+     } 
 
     void Explore(Boid_Data x){
+
         x.force = Calculate(x);
         x.acceleration = x.force / x.mass;
         x.velocity += x.acceleration * Time.deltaTime;
@@ -97,9 +102,17 @@ public class Boid_ECS : ComponentSystem{
 
         if (x.currentTime > x.rayCastTimer) {
             x.currentTime = 0f;
-
         }
     }
+    bool notStarted = true; 
+    void BeginTheBattle(){
+
+        if(notStarted){
+            notStarted = false; 
+            GameMaster.GM.GetComponent<GameMaster>().BeginFightCommand(); 
+        }
+       
+    } 
 
 
 }

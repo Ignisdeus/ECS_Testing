@@ -9,7 +9,9 @@ public class Boid_Data : MonoBehaviour
         explore,
         hunt, 
         engage,
-        run
+        run,
+        formation,
+        InFormation
 
     }
 
@@ -27,11 +29,15 @@ public class Boid_Data : MonoBehaviour
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f; 
     public List<SteeringBehaviour> movement = new List<SteeringBehaviour>();
- 
-
+    
+    public GameObject enemyMotherShip; 
+    public bool isMotherShip; 
+    public Vector3 LookAtPos;
     private void Start()
     {
-        action = Behaviour.explore; 
+        
+        LookAtPos = new Vector3(target.x,target.y,0);
+        //action = Behaviour.explore; 
         rayCastTimer = Random.Range(0,5f);
         SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
 
@@ -41,7 +47,13 @@ public class Boid_Data : MonoBehaviour
             }
         
         }
-
+        if(!isMotherShip){
+            GameMaster.GM.GetComponent<GameMaster>().allShips.Add(gameObject);
+        }
 
     }
+
+
+
+    
 }

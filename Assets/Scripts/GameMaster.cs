@@ -61,4 +61,32 @@ public class GameMaster : MonoBehaviour
     void GameOn(){
         canWin = true; 
     }
+
+
+    public List<GameObject> allShips = new List<GameObject>();
+    
+    public IEnumerator BeginFight(){
+        yield return new WaitForSeconds(40f); 
+        for( int x =0; x < allShips.Count; x ++){ 
+
+            // change to explore
+            allShips[x].GetComponent<Boid_Data>().action =  Boid_Data.Behaviour.explore; 
+            //my move to target is now the same as the custiom wonder
+            allShips[x].GetComponent<Boid_Data>().target =  allShips[x].GetComponent<CustomWonder>().target;
+            //custom wonder is now working
+            allShips[x].GetComponent<CustomWonder>().weight = 1f; 
+            // I can shoot people
+            allShips[x].GetComponent<Drone_Data>().enabled = true;
+            //does nothing
+            //allShips[x].GetComponent<CustomWonder>().enabled = true;
+            
+            allShips[x].GetComponent<ArriveBehaviour>().weight =0f;
+            allShips[x].GetComponent<SeekBehaviour>().weight =0f;
+
+        } 
+
+    } 
+    public void BeginFightCommand(){
+        StartCoroutine(BeginFight());
+    } 
 }

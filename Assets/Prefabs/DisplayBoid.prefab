@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: 
-  action: 0
+  action: 4
   rayCastTimer: 0
   currentTime: 0
   force: {x: 0, y: 0, z: 0}
@@ -124,6 +124,9 @@ MonoBehaviour:
   maxSpeed: 5
   maxForce: 10
   movement: []
+  enemyMotherShip: {fileID: 0}
+  isMotherShip: 0
+  LookAtPos: {x: 0, y: 0, z: 0}
 --- !u!114 &4426460372037649898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,10 +275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4426460372037649899}
     m_Modifications:
-    - target: {fileID: 1610991785650228, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
-      propertyPath: m_Name
-      value: 'Attack_Bird '
-      objectReference: {fileID: 0}
     - target: {fileID: 4139154951455856, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -323,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 4139154951455856, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
       propertyPath: m_LocalScale.x
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610991785650228, guid: 36fac302a07b074428cb8107eba99f43, type: 3}
+      propertyPath: m_Name
+      value: 'Attack_Bird '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36fac302a07b074428cb8107eba99f43, type: 3}

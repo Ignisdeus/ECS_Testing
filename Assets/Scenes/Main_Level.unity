@@ -348,6 +348,9 @@ MonoBehaviour:
   maxSpeed: 5
   maxForce: 10
   movement: []
+  enemyMotherShip: {fileID: 0}
+  isMotherShip: 1
+  LookAtPos: {x: 0, y: 0, z: 0}
 --- !u!114 &74411057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +387,8 @@ MonoBehaviour:
     type: 3}
   babyShips: 150
   canSpawn: 1
+  enemy: {fileID: 1066346042}
+  formationSeparation: 5
 --- !u!114 &74411059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +556,7 @@ MonoBehaviour:
   textinfo:
   - {fileID: 1629802334}
   - {fileID: 1745434205}
+  allShips: []
 --- !u!4 &243093457
 Transform:
   m_ObjectHideFlags: 0
@@ -1549,6 +1555,9 @@ MonoBehaviour:
   maxSpeed: 5
   maxForce: 10
   movement: []
+  enemyMotherShip: {fileID: 0}
+  isMotherShip: 1
+  LookAtPos: {x: 0, y: 0, z: 0}
 --- !u!114 &1066346045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,6 +1619,8 @@ MonoBehaviour:
   miniShips: {fileID: 1292272909984874, guid: b71528701ff476649938cb3e32c16c8e, type: 3}
   babyShips: 150
   canSpawn: 1
+  enemy: {fileID: 74411048}
+  formationSeparation: 5
 --- !u!1 &1090062789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,6 +2168,9 @@ MonoBehaviour:
   maxSpeed: 5
   maxForce: 10
   movement: []
+  enemyMotherShip: {fileID: 0}
+  isMotherShip: 1
+  LookAtPos: {x: 0, y: 0, z: 0}
 --- !u!114 &1739916309
 MonoBehaviour:
   m_ObjectHideFlags: 0

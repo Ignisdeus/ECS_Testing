@@ -9888,7 +9888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: BirdShip
-  action: 0
+  action: 4
   rayCastTimer: 0
   currentTime: 0
   force: {x: 0, y: 0, z: 0}
@@ -9901,6 +9901,9 @@ MonoBehaviour:
   maxSpeed: 10
   maxForce: 50
   movement: []
+  enemyMotherShip: {fileID: 0}
+  isMotherShip: 0
+  LookAtPos: {x: 0, y: 0, z: 0}
 --- !u!114 &8724017287246453318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9930,7 +9933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
-  radus: 100
+  radus: 75
 --- !u!114 &2795491823544660942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9959,7 +9962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   force: {x: 0, y: 0, z: 0}
-  slowingDistance: 15
+  slowingDistance: 150
 --- !u!65 &7358316212682724166
 BoxCollider:
   m_ObjectHideFlags: 0

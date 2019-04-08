@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomWonder : SteeringBehaviour
 {
-    Vector3 target;
+    public Vector3 target;
     public float radus = 70f;
     /*
     private void OnDrawGizmos()
@@ -14,7 +14,10 @@ public class CustomWonder : SteeringBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(boid,1f);
     }*/
-    Vector3 boid; 
+    Vector3 boid;
+    private void Start() {
+        target = Random.insideUnitSphere * (radus);
+    }
     public override Vector3 Calculate(Boid_Data x){
         boid = x.target;
         float dist = Vector3.Distance(x.transform.position, target);

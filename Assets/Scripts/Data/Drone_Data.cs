@@ -10,7 +10,7 @@ public class Drone_Data : MonoBehaviour
     public RaycastHit hit;
     public float rayLenght = 10f;
     public Transform rayCastPoint;
-    [HideInInspector]
+    
     public bool rayCastworking = false;
     public string enemyTag;
     
@@ -20,11 +20,11 @@ public class Drone_Data : MonoBehaviour
 
     private void Start()
     {
-        if(tag == "BirdShip"){
-            GameMaster.GM.GetComponent<GameMaster>().starForce++;
-        }else{
-            GameMaster.GM.GetComponent<GameMaster>().roachSwarm++;
-        }
+                    if (gameObject.tag == "BirdShip") {
+                        enemyTag = "Drone";
+                    } else {
+                        enemyTag = "BirdShip";
+                    }
     }
     public IEnumerator RayCheck()
     {
