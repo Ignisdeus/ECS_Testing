@@ -13,18 +13,20 @@ public class Camera_Change_Event : MonoBehaviour
         target = targetPoint.transform.position;
 
     }
-
-    // Update is called once per frame
+    [Range(0f,10f)]
+    public float waitTime;
+    
     void Update()
     {
         
 
-        if(targetLocation){
+        if(targetLocation ) {
 
             float distance = Vector3.Distance(transform.position, target);
             if (distance < distanceCheck){
+                
                 target = Vector3.zero;
-                TargetLocation(); 
+                Invoke("TargetLocation", waitTime); 
 
             }
 

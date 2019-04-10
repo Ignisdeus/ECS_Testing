@@ -10,6 +10,7 @@ public class Drone_Data : MonoBehaviour
     public RaycastHit hit;
     public float rayLenght = 10f;
     public Transform rayCastPoint;
+    public GameObject roachExpl, BirdExpl; 
     
     public bool rayCastworking = false;
     public string enemyTag;
@@ -70,18 +71,21 @@ public class Drone_Data : MonoBehaviour
             if(Physics.SphereCast(blasters[0].position,2f, blasters[0].TransformDirection(Vector3.forward), out shot[0], rayLenght)){
             GameObject x = shot[0].collider.gameObject;
             if (shot[0].collider.tag == enemyTag && GetComponent<Presue>().target != null ) {
-                StartCoroutine(LineRender());
+                StartCoroutine(LineRender(shot[0].collider.transform));
                     x.GetComponent<Health>().health -= AmountToRemove();
 
                     if (x.GetComponent<Health>().health <= 0) {
                         canShoot = false; 
                         GetComponent<Boid_Data>().action = Boid_Data.Behaviour.explore;
-                    if (tag == "BirdShip") {
-                        GameMaster.GM.GetComponent<GameMaster>().roachSwarm--;
-                    } else {
+                        if (tag == "BirdShip") {
+                            Instantiate(roachExpl, shot[0].transform.position, shot[0].collider.gameObject.transform.rotation);
+                            GameMaster.GM.GetComponent<GameMaster>().roachSwarm--;
+                        }else{
+                        Instantiate(BirdExpl, shot[0].transform.position, shot[0].collider.gameObject.transform.rotation);
                         GameMaster.GM.GetComponent<GameMaster>().starForce--;
-                    }
-                    Destroy(x.gameObject);
+                        }
+                        
+                        Destroy(x.gameObject);
                         //Debug.Log("killed him");
                     }
                 }
@@ -89,12 +93,16 @@ public class Drone_Data : MonoBehaviour
     }
 
     public LineRenderer[] lines;
-    IEnumerator LineRender(){
+    IEnumerator LineRender(Transform x){
         //Debug.Log("Fire");
+        // create point to fire lazer to 
+
+        Vector3 fwd = blasters[0].transform.forward;
+        fwd *= Vector3.Distance(transform.position, x.position); 
         for(int i =0; i < lines.Length; i ++){
             lines[i].enabled = true;
             lines[i].SetPosition(0, blasters[i].transform.position);
-            lines[i].SetPosition(1, blasters[i].transform.position * rayLenght);
+            lines[i].SetPosition(1, fwd);
         }
         yield return new WaitForSeconds(timeBetweenShots);
         for (int i = 0; i < lines.Length; i++) {

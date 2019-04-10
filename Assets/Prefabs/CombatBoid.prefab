@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   force: {x: 0, y: 0, z: 0}
-  slowingDistance: 75
+  slowingDistance: 25
 --- !u!114 &1591982156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,9 +353,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayLenght: 40
   rayCastPoint: {fileID: 1479888035629363405}
+  roachExpl: {fileID: 1102725331297008, guid: f7618bb6fc271be49ac0520967bfd05d, type: 3}
+  BirdExpl: {fileID: 1102725331297008, guid: 8a88736899bb9e6408b3ead5e4bc5f87, type: 3}
   rayCastworking: 0
   enemyTag: Drone
-  timeBetweenShots: 0.25
+  timeBetweenShots: 0.1
   blasters:
   - {fileID: 2838493995661007683}
   - {fileID: 4683737678330112364}

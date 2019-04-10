@@ -9866,9 +9866,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayLenght: 40
   rayCastPoint: {fileID: 4182609348703212}
+  roachExpl: {fileID: 1102725331297008, guid: f7618bb6fc271be49ac0520967bfd05d, type: 3}
+  BirdExpl: {fileID: 1102725331297008, guid: 8a88736899bb9e6408b3ead5e4bc5f87, type: 3}
   rayCastworking: 0
   enemyTag: BirdShip
-  timeBetweenShots: 0.25
+  timeBetweenShots: 0.1
   blasters:
   - {fileID: 6825378726633371393}
   - {fileID: 3856437541014897286}
@@ -9933,6 +9935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
   radus: 75
 --- !u!114 &2795491823544660942
 MonoBehaviour:
@@ -9962,7 +9965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   force: {x: 0, y: 0, z: 0}
-  slowingDistance: 150
+  slowingDistance: 20
 --- !u!65 &7358316212682724166
 BoxCollider:
   m_ObjectHideFlags: 0
