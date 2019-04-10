@@ -42,20 +42,12 @@ public class Boid_ECS : ComponentSystem{
             
             Boid_Data x = b.boid;
             //tryed making a state machine setup but slowed down performace to 6 fps unknowen reasion
-            if(x.action == Boid_Data.Behaviour.explore){
-                Explore(x);
-            }else if(x.action == Boid_Data.Behaviour.engage) {
-                Explore(x);
-            }else if(x.action == Boid_Data.Behaviour.formation){
+            if(x.action == Boid_Data.Behaviour.formation){
                 x.GetComponent<Drone_Data>().enemyTag = ""; 
-                FormUp(x);
-
-                              
+                FormUp(x);            
             }else if(x.action == Boid_Data.Behaviour.InFormation) {
                 TenHuh(x);
-                
-            }
-            else{
+            }else{
                 Explore(x);
             }
 

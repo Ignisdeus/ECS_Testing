@@ -7,21 +7,27 @@ ModelImporter:
     100002: Camera
     100004: Lamp
     100006: Plane
+    100008: Cube
     400000: //RootNode
     400002: Camera
     400004: Lamp
     400006: Plane
+    400008: Cube
     2000000: Camera
     2100000: MainShell
     2100002: Glass
     2100004: Engine_Paint
     2100006: Guns
+    2100008: Material
     2300000: Plane
     2300002: //RootNode
+    2300004: Cube
     3300000: Plane
     3300002: //RootNode
+    3300004: Cube
     4300000: Plane
     4300002: Bird_AttackShip
+    4300004: Cube
     10800000: Lamp
   externalObjects: {}
   materials:
@@ -57,6 +63,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -81,6 +88,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -95,7 +105,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

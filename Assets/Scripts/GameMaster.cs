@@ -33,7 +33,7 @@ public class GameMaster : MonoBehaviour
     string endofGameDisplay; 
     
     void VictoryCheck(){
-        if(timer > 60 * 2.5){
+        if(timer > 60 * 1.5){
 
             if(starForce > roachSwarm){
                 VictoryDisplay("Star Force", "Imperal Swarm");
@@ -64,9 +64,9 @@ public class GameMaster : MonoBehaviour
 
 
     public List<GameObject> allShips = new List<GameObject>();
-    
+    public float timeBeforeBattleStarts = 20f; 
     public IEnumerator BeginFight(){
-        yield return new WaitForSeconds(40f); 
+        yield return new WaitForSeconds(timeBeforeBattleStarts); 
         for( int x =0; x < allShips.Count; x ++){ 
 
             // change to explore

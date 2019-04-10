@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4779964355138870}
-  - component: {fileID: 7321434548390456458}
+  - component: {fileID: 4586451086539286892}
   m_Layer: 0
-  m_Name: Drone_explosion
+  m_Name: Bird_explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7321434548390456458
+--- !u!114 &4586451086539286892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4699,8 +4699,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 98b3b6ff9d0c5dd419ca0d0d2d6a988c, type: 2}
-  - {fileID: 2100000, guid: 9e4f3358b60b5cb4991b3ea0877b4d81, type: 2}
+  - {fileID: 2100000, guid: 789af13dae02de94aa2d07bc2d035a5f, type: 2}
+  - {fileID: 2100000, guid: 644fbc55208b8b748a909f5e1c775bfc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9398,8 +9398,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4380cbb3fdb4ae24195a467d2beb8729, type: 2}
-  - {fileID: 2100000, guid: 9e4f3358b60b5cb4991b3ea0877b4d81, type: 2}
+  - {fileID: 2100000, guid: 7f1b8d4e670bae6499f32e6b6b6eefc2, type: 2}
+  - {fileID: 2100000, guid: 644fbc55208b8b748a909f5e1c775bfc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
