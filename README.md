@@ -21,10 +21,19 @@ When both bars have depleted the simulation will begin.
 <h2>How it Works </h2>
 <p>
 This project works by using Hybrid ECS all the autonomous agents. The two mother ships and the small attack ships. </br>
-<h3>Setup</h3> </br>
+<h3>Setup Section</h3>
 In the setup section of the simulation, the two mother ships use the seek behaviour to get to the centre of the game world(Vector3(0,0,0)). 
 When the two ships are 20 units from the centre both spawn a predetermined amount of combat ships. These combat ships then line up in a set formation that is inspired by the eternal fleet in Star Wars the Knights of the Old Republic. After a few seconds, the smaller ship engages in combat. </br>
+<h3>Combat Section</h3>
+When the combat begins the two mother Ship cycle the combat area with using a path following Behaviour. While the combat boids have two main states Explore and Engage. 
+|Behaviour| Effect |
+|---------|--------|
+|Explore  |Causes the boid to randomly pick a point within an ever decreasing sphear and seek this position. This sphear will reset to a larger size when it shrinks to a set point. Causing the battlefield to expand for a short amount of time.
+|
+|Engage   |Causes the boid to ray cast forward if the ray cast hit a target that is not on the same side the health of the target is reduced. This health reduction has a small chance to perform a critical hit.|
  
+
+   
 </p> 
 
 
