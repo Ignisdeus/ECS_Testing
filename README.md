@@ -41,7 +41,7 @@ When the combat begins the two mother Ship cycle the combat area with using a pa
 |Formation|By using an array of Vector3's and an embedded for loop creating 300 points. One of these points then passed to each Instanced combat boid. the combat boids the first behaviour set up then causes the boid to get into this position before the fight starts.|
 </p>
 
-<h3> What I would Change<h/3>
+<h3> What I would Change</h3>
  <p>
   
 |Mechanic|Issue|
