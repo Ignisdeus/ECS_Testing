@@ -20,7 +20,7 @@ When both bars have depleted the simulation will begin.
 
 <h2>How it Works </h2>
 <p>
-This project works by using Hybrid ECS all the autonomous agents. The two mother ships and the small attack ships. </br>
+This is a simulation that used Boid behaviours and hybrid ECS that enables unity to simultaneous control up to 600 independent Boids in the scene at any time. These Boids used a simple version of a state machine to enable more complex interactions within the scene. 
 <h3>Setup Section</h3>
 In the setup section of the simulation, the two mother ships use the seek behaviour to get to the centre of the game world(Vector3(0,0,0)). 
 When the two ships are 20 units from the centre both spawn a predetermined amount of combat ships. These combat ships then line up in a set formation that is inspired by the eternal fleet in Star Wars the Knights of the Old Republic. After a few seconds, the smaller ship engages in combat. </br>
