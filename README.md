@@ -1,11 +1,18 @@
 # ECS_Testing
+
+
+
+
+
+* Blow this was the projected plan for the project*
+
 This document will outline the plan for this project, with scene progressions and behaviours found within each scene. 
 
 **Scene 1:** 
 
 ![Scene_One](https://github.com/Ignisdeus/ECS_Testing/blob/master/Images/Scene_One.jpg)
  
--	Big carrier ship (Wonder) fly’s through space with a wonder behaviour. 
+-	Big carrier ship (Wonder) flyâ€™s through space with a wonder behaviour. 
 -	Camera (Path Follow) circles the carer ship.
 -	Carrier ship (Seek) jumps to FTL.
 
@@ -13,7 +20,7 @@ This document will outline the plan for this project, with scene progressions an
 
   ![Scene_Two](https://github.com/Ignisdeus/ECS_Testing/blob/master/Images/Scene_Two.jpg)
   ![Scene_Three](https://github.com/Ignisdeus/ECS_Testing/blob/master/Images/Scene_Three.jpg)
--	Camera (Seek Behaviour) follow the ship as the fly’s in hyperspace effect. 
+-	Camera (Seek Behaviour) follow the ship as the flyâ€™s in hyperspace effect. 
 -	Camera (remove All active Behaviours after a few seconds camera becomes inactive) slows down as ship disappears in a flash of light. 
  
 **Scene 4:** 
