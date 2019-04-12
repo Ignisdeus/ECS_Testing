@@ -54,7 +54,7 @@ When the combat begins the two mother Ship cycle the combat area with using a pa
 
 
 
-#Below this was the projected plan for the project#
+<h1>Below this was the projected plan for the project</h1>
 
 This document will outline the plan for this project, with scene progressions and behaviours found within each scene. 
 
