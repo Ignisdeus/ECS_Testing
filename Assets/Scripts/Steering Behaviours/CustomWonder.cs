@@ -5,7 +5,7 @@ using UnityEngine;
 public class CustomWonder : SteeringBehaviour
 {
     public Vector3 target;
-    public float radus = 70f;
+    public static float radus = 70f;
     /*
     private void OnDrawGizmos()
     {

@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Test_One\Rotation_Entity.cs" />
     <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
     <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
+    <Compile Include="Assets\TheCommingStorm.cs" />
     <None Include="Assets\Stagit\SkyboxEarthPlanets\readme.txt" />
     <Reference Include="Unity.Entities.Properties">
       <HintPath>E:/Unity Projects/ECS_Testing/ECS_Testing/Library/ScriptAssemblies/Unity.Entities.Properties.dll</HintPath>

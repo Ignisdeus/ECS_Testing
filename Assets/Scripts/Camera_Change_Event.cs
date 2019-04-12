@@ -15,32 +15,21 @@ public class Camera_Change_Event : MonoBehaviour
     }
     [Range(0f,10f)]
     public float waitTime;
-    
-    void Update()
-    {
-        
-
+    void Update(){
         if(targetLocation ) {
-
             float distance = Vector3.Distance(transform.position, target);
-            if (distance < distanceCheck){
-                
+            if (distance < distanceCheck){ 
                 target = Vector3.zero;
                 Invoke("TargetLocation", waitTime); 
-
             }
-
         }
     }
-
     public GameObject nextCamera, motherShip;
     public GameObject FTLSpawnPoint;
     public GameObject FTL;
     void TargetLocation(){
-
+        GameMaster.GM.GetComponent<GameMaster>().CalledFade();
         nextCamera.SetActive(true);
         Destroy(gameObject);
-
-
     } 
 }

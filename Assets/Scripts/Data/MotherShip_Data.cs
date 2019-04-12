@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Entities;
 
 public class MotherShip_Data : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class MotherShip_Data : MonoBehaviour
     public GameObject miniShips;
     public int babyShips = 100;
     public bool canSpawn = true; 
-    public GameObject enemy; 
-
+    public GameObject enemy;
+    public float distFromCenter;
     int count = 0 ;
 
 
@@ -52,6 +53,7 @@ public class MotherShip_Data : MonoBehaviour
             }
             
             GameObject x= Instantiate(miniShips, transform.position, Quaternion.identity);
+            
             x.GetComponent<Boid_Data>().target = grid[i]; 
             x.GetComponent<Boid_Data>().enemyMotherShip = enemy;
             yield return new WaitForSeconds(0.01f);

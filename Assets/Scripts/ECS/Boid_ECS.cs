@@ -41,18 +41,23 @@ public class Boid_ECS : ComponentSystem{
 
             
             Boid_Data x = b.boid;
-            //tryed making a state machine setup but slowed down performace to 6 fps unknowen reasion
-            if(x.action == Boid_Data.Behaviour.formation){
-                x.GetComponent<Drone_Data>().enemyTag = ""; 
-                FormUp(x);            
-            }else if(x.action == Boid_Data.Behaviour.InFormation) {
-                TenHuh(x);
-            }else{
-                Explore(x);
-            }
 
-        }
+                //tryed making a state machine setup but slowed down performace to 6 fps unknowen reasion
+                if (x.action == Boid_Data.Behaviour.formation) {
+                    x.GetComponent<Drone_Data>().enemyTag = "";
+                    FormUp(x);
+                } else if (x.action == Boid_Data.Behaviour.InFormation ) {
+                    TenHuh(x);
+                } else {
+                    Explore(x);
+                }
+        } 
+
+
+        
     }
+
+
     void FormUp(Boid_Data x){
         x.GetComponent<Drone_Data>().enabled = false;
         x.GetComponent<CustomWonder>().weight = 0f; 

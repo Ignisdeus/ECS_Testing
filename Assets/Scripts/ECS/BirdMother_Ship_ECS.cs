@@ -15,39 +15,30 @@ public class BirdMother_Ship_ECS : ComponentSystem
     protected override void OnUpdate(){
 
         foreach (var b in GetEntities<components>()){
-
-            if(b.ship.combat){
-                //b.boid.GetComponent<PathFollow>().enabled=true;
-                b.boid.GetComponent<ArriveBehaviour>().weight = 0f;
-                b.boid.GetComponent<PathFollow>().weight = 1f;
-                if(b.ship.canSpawn){
-                    b.ship.canSpawn = false; 
-                    SpawnCombatBoid(b.ship);
-                    
-                }
- 
-            } else{
-                b.boid.GetComponent<PathFollow>().weight = 0f;
-                b.boid.GetComponent<ArriveBehaviour>().weight = 1f;
-                float dist = Vector3.Distance(Vector3.zero, b.pos.transform.position);
-
-                if(dist < 50f){
-                    int pathNo = b.boid.GetComponent<PathFollow>().path.waypoints.Count;
-                    b.boid.GetComponent<PathFollow>().current = Random.Range(0, pathNo);
-                    b.ship.combat = true;
-
-                }
-            } 
+            Boid_Data x = b.boid; 
+            if(x.action == Boid_Data.Behaviour.explore){
+                MotherShipSetUp(b.ship); 
+            }
         }
     }
+    
+    void MotherShipSetUp(MotherShip_Data x){
 
+        x.GetComponent<PathFollow>().enabled = false;
+        x.GetComponent<SeekBehaviour>().weight = 1f;
+        x.GetComponent<Boid_Data>().target = Vector3.zero;
+        float dist = Vector3.Distance(x.transform.position, Vector3.zero);
+        
+        if(dist < x.distFromCenter){
+            x.GetComponent<PathFollow>().enabled = true;
+            x.GetComponent<SeekBehaviour>().weight = 0f;
+            x.GetComponent<PathFollow>().weight = 1f;
+            x.GetComponent<Boid_Data>().action = Boid_Data.Behaviour.run;
+            SpawnCombatBoid(x);
+
+        } 
+    } 
     void SpawnCombatBoid(MotherShip_Data x){
-
-
-        
                 x.StartCoroutine(x.Spawn());
-        
-
-
     }
 }
