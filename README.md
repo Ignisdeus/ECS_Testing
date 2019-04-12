@@ -1,7 +1,31 @@
 # ECS_Testing
 
 **Name:** Michael Carstairs
+
 **Student Number:** C16707919
+
+<h2> Description of the assignment </h2>
+<p> 
+This project displays a space battle of my own design. With some elements that inspired me from Star Wars the Old Republic. This project is programmed some elements of Hybrid ECS. This allows for more objects to be acting independently within the scene. 
+</p>
+
+<h2> Instructions </h2>
+
+<p>
+To use this project open the project, Start the game while in the "MainMenu" scene. 
+You can then use the sliders on the right side of the screen to adjust the number of active ships to be spawned at the point of confrontation. 
+When the player presses the play button the two slider bars will begin to deplete. 
+When both bars have depleted the simulation will begin.
+</p>
+
+<h2>How it Works </h2>
+<p>
+This project works by using Hybrid ECS all the autonomous agents. The two mother ships and the small attack ships. </br>
+<h3>Setup</h3> </br>
+In the setup section of the simulation, the two mother ships use the seek behaviour to get to the centre of the game world(Vector3(0,0,0)). 
+When the two ships are 20 units from the centre both spawn a predetermined amount of combat ships. These combat ships then line up in a set formation that is inspired by the eternal fleet in Star Wars the Knights of the Old Republic. After a few seconds, the smaller ship engages in combat. </br>
+ 
+</p> 
 
 
 
