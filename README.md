@@ -1,10 +1,12 @@
 # ECS_Testing
 
+**Name:** Michael Carstairs
+**Student Number:** C16707919
 
 
 
 
-*Blow this was the projected plan for the project*
+#Below this was the projected plan for the project#
 
 This document will outline the plan for this project, with scene progressions and behaviours found within each scene. 
 
