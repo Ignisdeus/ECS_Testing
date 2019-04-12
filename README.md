@@ -30,12 +30,18 @@ When the combat begins the two mother Ship cycle the combat area with using a pa
 |Behaviour| Effect |
 |---------|--------|
 |Explore  |Causes the boid to randomly pick a point within an ever decreasing sphear and seek this position. This sphear will reset to a larger size when it shrinks to a set point. Causing the battlefield to expand for a short amount of time.|
-|Engage   |Causes the boid to ray cast forward if the ray cast hit a target that is not on the same side the health of the target is reduced. This health reduction has a small chance to perform a critical hit.|
- 
-
-   
+|Engage   |Causes the boid to ray cast forward if the ray cast hit a target that is not on the same side the health of the target is reduced. This health reduction has a small chance to perform a critical hit.While the target is alive the attacking ship will use a persue Behaviour.|
 </p> 
+<h3>What I am most proud of</h3>
+<p>
+|Mechanic| How I done it |
+|---------|--------|
+|Camera Rail System |Using the path following behaviour on an Empty game object that has the camera presented to it. The camera has a basic look at behaviour on it with a public variable that can be used to place in the look at the target. This gave an effect similar to a camera on a rail system behaviour that can also be timed. |
+|Formation|By using an array of Vector3's and an embedded for loop creating 300 points. One of these points then passed to each Instanced combat boid. the combat boids the first behaviour set up then causes the boid to get into this position before the fight starts.|
+</p>
 
+<h3> What I would Change<h/3>
+ <p></p>
 
 
 
