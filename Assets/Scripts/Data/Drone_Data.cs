@@ -14,6 +14,8 @@ public class Drone_Data : MonoBehaviour
     
     public bool rayCastworking = false;
     public string enemyTag;
+    public AudioSource audioS;
+    public AudioClip[] audioSounds; 
     
     public float timeBetweenShots;
     bool canShoot;
@@ -26,6 +28,7 @@ public class Drone_Data : MonoBehaviour
                     } else {
                         enemyTag = "BirdShip";
                     }
+        audioS = GetComponent<AudioSource>(); 
     }
     public IEnumerator RayCheck()
     {
@@ -75,6 +78,7 @@ public class Drone_Data : MonoBehaviour
                     x.GetComponent<Health>().health -= AmountToRemove();
 
                     if (x.GetComponent<Health>().health <= 0) {
+                        audioS.PlayOneShot(audioSounds[0], 1f);
                         canShoot = false; 
                         GetComponent<Boid_Data>().action = Boid_Data.Behaviour.explore;
                         if (tag == "BirdShip") {
@@ -101,6 +105,7 @@ public class Drone_Data : MonoBehaviour
         fwd *= Vector3.Distance(transform.position, x.position); 
         for(int i =0; i < lines.Length; i ++){
             lines[i].enabled = true;
+            audioS.PlayOneShot(audioSounds[1], 1f); 
             lines[i].SetPosition(0, blasters[i].transform.position);
             lines[i].SetPosition(1, fwd);
         }
