@@ -807,11 +807,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 450985977}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63577cc84e0ec749a90d2a07d66825d, type: 3}
+  m_Script: {fileID: 11500000, guid: 98180c31a01f60e489338db50b9d1ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   motherShip: {fileID: 1293460458564634}
-  radius: 5
+  radius: 10
   expl: {fileID: 1102725331297008, guid: f7618bb6fc271be49ac0520967bfd05d, type: 3}
 --- !u!1 &566589508
 GameObject:
@@ -1347,11 +1347,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 701449215}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63577cc84e0ec749a90d2a07d66825d, type: 3}
+  m_Script: {fileID: 11500000, guid: 98180c31a01f60e489338db50b9d1ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   motherShip: {fileID: 1293460799929772}
-  radius: 5
+  radius: 10
   expl: {fileID: 1102725331297008, guid: 8a88736899bb9e6408b3ead5e4bc5f87, type: 3}
 --- !u!1 &704423047
 GameObject:
