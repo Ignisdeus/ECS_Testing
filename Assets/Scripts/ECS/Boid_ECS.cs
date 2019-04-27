@@ -8,8 +8,8 @@ public class Boid_ECS : ComponentSystem{
         public Transform pos;
         public Boid_Data boid;
     }
-
-    protected override void OnStartRunning(){}
+    
+    
 
     Vector3 Calculate(Boid_Data x)
     {
@@ -52,9 +52,6 @@ public class Boid_ECS : ComponentSystem{
                     Explore(x);
                 }
         } 
-
-
-        
     }
 
 
@@ -63,6 +60,7 @@ public class Boid_ECS : ComponentSystem{
         x.GetComponent<CustomWonder>().weight = 0f; 
         x.GetComponent<ArriveBehaviour>().weight =1f;
         x.GetComponent<SeekBehaviour>().weight =0f;
+        x.GetComponent<Boid_Data>().target = x.GetComponent<Boid_Data>().formationPosistion; 
         Explore(x);
         float dist = Vector3.Distance(x.transform.position, x.target); 
         if(dist < 2f){
@@ -79,7 +77,6 @@ public class Boid_ECS : ComponentSystem{
      } 
 
     void Explore(Boid_Data x){
-
         x.force = Calculate(x);
         x.acceleration = x.force / x.mass;
         x.velocity += x.acceleration * Time.deltaTime;

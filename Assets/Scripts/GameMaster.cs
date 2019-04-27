@@ -18,6 +18,7 @@ public class GameMaster : MonoBehaviour
         restartButton.SetActive(false); 
         Invoke("GameOn", 60f);
         StartCoroutine(FadeEffect());
+
     }
 
     public Text[] textinfo;
@@ -48,7 +49,7 @@ public class GameMaster : MonoBehaviour
                 Destroy(g.gameObject); 
             }
             starForce = 0;
-            restartButton.SetActive(true);
+            StartCoroutine(CameraSwap(birdCamera));
         }
 
         if (roachSwarm < minNumber) {
@@ -60,12 +61,37 @@ public class GameMaster : MonoBehaviour
                 Instantiate(roachExpl, g.transform.position, Quaternion.identity);
                 Destroy(g.gameObject);
             }
+            StartCoroutine(CameraSwap(droneCamera));
             roachSwarm = 0;
-            restartButton.SetActive(true);
+            //restartButton.SetActive(true);
         }
 
 
-    } 
+    }
+    public Camera droneCamera, birdCamera, railCamera;
+    bool endCamera = false;
+    public GameObject birdMother, droneMother;
+    IEnumerator CameraSwap(Camera x){
+
+        if(!endCamera){
+            endCamera = true;
+            yield return new WaitForSeconds(2f);
+            railCamera.enabled = false;
+            x.enabled = true;
+            CalledFade();
+
+            
+            if(starForce == 0){
+                birdMother.GetComponentInChildren<FinalExplosion>().enabled = true; 
+            }else{
+                droneMother.GetComponentInChildren<FinalExplosion>().enabled = true;
+            }
+            restartButton.SetActive(true);
+        }
+        
+
+    }
+    // out dated
     void VictoryDisplay(string winner, string loser){
        //blackBackGround.enabled = true; 
        endofGameDisplay = " Faced with overwhelming opposition "+ loser + " had no choice but to retreat. Leaving the "+winner+" to explore deep space once more unopposed.";
@@ -78,7 +104,8 @@ public class GameMaster : MonoBehaviour
 
 
     public List<GameObject> allShips = new List<GameObject>();
-    public float timeBeforeBattleStarts = 20f; 
+    public float timeBeforeBattleStarts = 20f;
+    
     public IEnumerator BeginFight(){
         yield return new WaitForSeconds(timeBeforeBattleStarts); 
         for( int x =0; x < allShips.Count; x ++){ 
@@ -111,7 +138,7 @@ public class GameMaster : MonoBehaviour
     }
     public string levelToLoad;
     public void LoadLevel(){
-        UnityEngine.SceneManagement.SceneManager.LoadScene(levelToLoad);
+        Application.Quit();  
     }
 
     IEnumerator FadeEffect(){

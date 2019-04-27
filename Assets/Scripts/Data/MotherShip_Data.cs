@@ -16,11 +16,11 @@ public class MotherShip_Data : MonoBehaviour
     int count = 0 ;
 
 
-    Vector3[] grid = new Vector3[300] ;
-    private void Awake()
+    Vector3[] grid = new Vector3[320] ;
+    private void Start()
     {
         int horzMount = 20;
-        int vertMount = 275 / horzMount;
+        int vertMount = 320 / horzMount;
         int zPos;
 
         if (tag == "MotherShipB") {
@@ -31,8 +31,12 @@ public class MotherShip_Data : MonoBehaviour
         for (int y = 0; y < vertMount; y++) {
 
             for (int x = 0; x < horzMount; x++) {
-
-                grid[y * horzMount + x] = new Vector3(x * formationSeparation, y * formationSeparation, zPos);
+                if( y % 2 ==0){
+                    grid[(y * horzMount) + x] = new Vector3((x * formationSeparation) - formationSeparation/2, y * formationSeparation, zPos);
+                } else{
+                    grid[(y * horzMount) + x] = new Vector3(x * formationSeparation, y * formationSeparation, zPos);
+                } 
+                
 
             }
         }
@@ -43,8 +47,6 @@ public class MotherShip_Data : MonoBehaviour
     public float formationSeparation = 5f; 
     public IEnumerator Spawn(){
 
-
-
         for(int i =0; i < babyShips; i ++){        
             if(tag == "MotherShipB"){
                 GameMaster.GM.GetComponent<GameMaster>().starForce++; 
@@ -54,7 +56,7 @@ public class MotherShip_Data : MonoBehaviour
             
             GameObject x= Instantiate(miniShips, transform.position, Quaternion.identity);
             
-            x.GetComponent<Boid_Data>().target = grid[i]; 
+            x.GetComponent<Boid_Data>().formationPosistion = grid[i]; 
             x.GetComponent<Boid_Data>().enemyMotherShip = enemy;
             yield return new WaitForSeconds(0.01f);
         }

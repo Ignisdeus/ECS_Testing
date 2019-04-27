@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FinalExplosion.cs" />
     <Compile Include="Assets\Scripts\Boid_Testing\Boid_GameMaster.cs" />
     <Compile Include="Assets\Scripts\Camera_Change_Event.cs" />
     <Compile Include="Assets\Scripts\Camera_LookAt.cs" />

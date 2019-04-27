@@ -18,7 +18,7 @@ public class Boid_Data : MonoBehaviour
     public Behaviour action; 
     [HideInInspector]
     public float rayCastTimer, currentTime; 
-    public Vector3 force = Vector3.zero, acceleration = Vector3.zero,  velocity = Vector3.zero, target;
+    public Vector3 force = Vector3.zero, acceleration = Vector3.zero,  velocity = Vector3.zero, target, formationPosistion;
     public float mass = 1;
 
     [Range(0.0f, 10.0f)]
