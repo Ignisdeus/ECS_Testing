@@ -4,6 +4,11 @@
 
 **Student Number:** C16707919
 
+
+<h2>Video Of Working Project</h2>
+
+[Video](https://www.youtube.com/watch?v=vY8izOd06kA&t=11s)
+
 <h2> Description of the assignment </h2>
 <p> 
 This project displays a space battle of my own design. With some elements that inspired me from Star Wars the Old Republic. This project is programmed some elements of Hybrid ECS. This allows for more objects to be acting independently within the scene. 
