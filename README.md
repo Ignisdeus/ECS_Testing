@@ -7,9 +7,7 @@
 
 <h2>Video Of Working Project</h2>
 
-
-
-[![Working Assignment](http://img.youtube.com/watch?v=vY8izOd06kA&t=11s/0.jpg)](https://www.youtube.com/watch?v=vY8izOd06kA&t=11s)
+[![Working Assignment](https://img.youtube.com/vi/vY8izOd06kA/hqdefault.jpg)](https://www.youtube.com/watch?v=vY8izOd06kA)
 
 <h2> Description of the assignment </h2>
 <p> 
